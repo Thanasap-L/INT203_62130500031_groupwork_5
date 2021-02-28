@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groupwork 5</title>
+
+    <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+    <!-- Using via Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- https://tailwindcss.com/docs/installation -->
+    <!-- Using Tailwind via CDN -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body class="bg-indigo-900">
+    <div id="app" class="h-full bg-white w-4/5 mx-auto rounded">
+        <h1 class="text-4xl text-center pt-5 py-2 font-bold">Photo Gallery</h1>
+        <p class="text-center text-base pb-5 opacity-50">Followings your favourite pictrues</p>
+        <div
+            class="w-40 ml-10 text-xl text-center divide-x divide-black py-5 bg-gray-200 rounded text-gray-500 pb-5 text-semibold">
+            <span class="px-2 font-semibold">Total: <span class="text-gray-900">{{ total }}</span></span>
+            <span class="px-2 font-semibold">Like: <span class="text-gray-900">{{ count }}</span></span>
+        </div>
+        <photo-search @show-bar='showBar' @search-text='changeSearch' :search-button='searchButton' :search-box='searchBox' :not-found='notFound'></photo-search>
+        <div class="py-2 flex flex-wrap justify-center overflow-hidden text-gray-700 h-full">
+            <photo-view @shown-img='shownImg' :shown='shown' :zoom-in='zoomImg'></photo-view>
+            <photo-items :img="filterPhoto" @fav-img="favImg" @zoom-img='zoomImg' @shown-img='shownImg'></photo-items>   
+        </div>
+    </div>
+
+    <!-- my main.js -->
+    <script src="./main.js"></script>
+    <script src="./components/PhotoItems.js"></script>
+    <script src="./components/PhotoSearch.js"></script>
+    <script src="./components/PhotoView.js"></script>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+
+</html>
