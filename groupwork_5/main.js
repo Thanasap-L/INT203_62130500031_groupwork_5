@@ -1,10 +1,10 @@
 const app = Vue.createApp({
     data() {
         return {
-            img: [{url: './images/image1.jpg', text: 'Forest at night', fav: true},
-                  {url: './images/image2.jpg', text: 'Forest in the morning', fav: false},
-                  {url: './images/image3.jpg', text: 'Reject Humanity', fav: false},
-                  {url: './images/image4.jpg', text: 'Ruturn to Monke', fav: false},
+            img: [{url: './images/image1.jpg', id:'0', text: 'Forest at night', fav: true},
+                  {url: './images/image2.jpg', id:'1', text: 'Forest in the morning', fav: false},
+                  {url: './images/image3.jpg', id:'2', text: 'Reject Humanity', fav: false},
+                  {url: './images/image4.jpg', id:'3', text: 'Ruturn to Monke', fav: false},
             ],
             searchButton: true,
             searchBox: false,

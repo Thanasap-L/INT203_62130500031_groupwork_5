@@ -1,4 +1,5 @@
 app.component('photo-items', {
+    emits: ['fav-img', 'zoomImg', 'shownImg'],
     props: {
         img: {
             type: Array,
@@ -22,7 +23,7 @@ app.component('photo-items', {
         <button class="flex-shrink-0 px-4 py-2 mt-10 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg 
                     sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 
                     hover:scale-110 focus:shadow-outline focus:outline-none"
-            @click="favImg(index)">Like</button>
+            @click="favImg(image.id)">Like</button>
         </div>
     </div>`,
     data() {

@@ -30,7 +30,7 @@
         </div>
         <photo-search @show-bar='showBar' @search-text='changeSearch' :search-button='searchButton' :search-box='searchBox' :not-found='notFound'></photo-search>
         <div class="py-2 flex flex-wrap justify-center overflow-hidden text-gray-700 h-full">
-            <photo-view @shown-img='shownImg' :shown='shown' :zoom-in='zoomImg'></photo-view>
+            <photo-view @shown-img='shownImg' :shown='shown' :zoomin='zoomIn'></photo-view>
             <photo-items :img="filterPhoto" @fav-img="favImg" @zoom-img='zoomImg' @shown-img='shownImg'></photo-items>   
         </div>
     </div>

@@ -1,4 +1,5 @@
 app.component('photo-search', {
+    emits: ['showBar', 'searchText'],
     props: [
         'notFound',
         'searchButton',
@@ -28,6 +29,7 @@ app.component('photo-search', {
     methods: {
         showBar() {
             this.$emit('showBar');
+            this.search = '';
         },
         searchText() {
             this.$emit('searchText', this.search);

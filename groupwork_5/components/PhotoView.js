@@ -1,4 +1,5 @@
 app.component('photo-view', {
+    emits: ['shownImg'],
     props: {
         zoomin: {
             require: true
@@ -11,12 +12,13 @@ app.component('photo-view', {
         <button @click="shownImg"><i class="material-icons">
                 remove_circle_outline
             </i></button>
-        <img class="h-full rounded pb-12 mx-auto" v-bind:src="zoomIn">
+        <img class="h-full rounded pb-12 mx-auto" v-bind:src="zoomin">
     </div>
     `,
     methods: {
-        // shownImg() {
-        //     this.$emit('shownImg');
-        // },
+        shownImg() {
+            this.$emit('shownImg');
+            console.log(this.shown)
+        },
     }
 })
